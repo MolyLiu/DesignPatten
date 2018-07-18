@@ -9,16 +9,20 @@ public class CashContext {
 
     Strategy strategy=null;
     //根据客户端传需求，进行特定的 的实例化
-    public CashContext(String s){
+    CashContext(String s){
 
         switch (s){
-            case "...":
-                strategy=new StrategyA();
+            case "正常计算":
+                strategy=new StrategyNormal();
+                break;
+            case "打八折":
+                CashRebate cashRebate=new CashRebate("0.8");
+                strategy=cashRebate;
                 break;
         }
 
     }
-    public double getResult(){
-        return strategy.AlogrithmInterface();
+    public double getResult(double money){
+        return strategy.AlogrithmInterface(money);
     }
 }

@@ -7,7 +7,8 @@ package strategy;
  */
 public abstract class Strategy {
 
+
     //计算方法
-    public abstract  double AlogrithmInterface();
+    public abstract  double AlogrithmInterface(double money);
 
 }
